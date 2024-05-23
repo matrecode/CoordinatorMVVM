@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
-    @State private var email: String = ""
+    
+    @StateObject private var forgotPasswordVM = ForgotPasswordVM()
 
     var body: some View {
         VStack {
@@ -9,12 +10,18 @@ struct ForgotPasswordView: View {
                 .font(.largeTitle)
                 .padding(.bottom, 40)
 
-            TextField("Email", text: $email)
+            TextField("Email", text: $forgotPasswordVM.email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
+            
+            if let errorMessage = forgotPasswordVM.errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding(.bottom, 20)
+            }
 
             Button(action: {
-                // Handle forgot password action
+                forgotPasswordVM.sendResetPassword()
             }) {
                 Text("Reset Password")
                     .frame(minWidth: 0, maxWidth: .infinity)

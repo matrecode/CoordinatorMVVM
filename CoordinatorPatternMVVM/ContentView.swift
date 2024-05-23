@@ -17,13 +17,17 @@ struct ContentView: View {
                 .navigationDestination(for: AuthCoordinator.Route.self){route in
                     switch route {
                     case .login:
-                        LoginView();
+                        LoginView()
+                            .environmentObject(authCoordinator)
                     case .signup:
-                        SignUpView();
+                        SignUpView()
+                            .environmentObject(authCoordinator)
                     case .forgotPassword:
                         ForgotPasswordView()
+                            .environmentObject(authCoordinator)
                     case .home:
                         MainView()
+                            .environmentObject(authCoordinator)
                     }
                     
                 }

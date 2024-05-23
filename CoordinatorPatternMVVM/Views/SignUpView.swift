@@ -1,10 +1,11 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
+   
     @EnvironmentObject var authCoordinator: AuthCoordinator
+    @StateObject private var signUpVM = SignUpVM()
+    
+   
 
     var body: some View {
         VStack {
@@ -12,20 +13,26 @@ struct SignUpView: View {
                 .font(.largeTitle)
                 .padding(.bottom, 40)
 
-            TextField("Email", text: $email)
+            TextField("Email", text: $signUpVM.email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
 
-            SecureField("Password", text: $password)
+            SecureField("Password", text: $signUpVM.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
 
-            SecureField("Confirm Password", text: $confirmPassword)
+            SecureField("Confirm Password", text: $signUpVM.confirmPassword)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
+            
+            if let errorMessage = signUpVM.errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding(.bottom, 20)
+            }
 
             Button(action: {
-                // Handle sign-up action
+                signUpVM.signUp(authCoordinator: authCoordinator)
             }) {
                 Text("Sign Up")
                     .frame(minWidth: 0, maxWidth: .infinity)
@@ -36,9 +43,10 @@ struct SignUpView: View {
             }
         }
         .padding(.horizontal, 40)
-    }
+            }
 }
 
 #Preview {
     SignUpView()
+        .environmentObject(AuthCoordinator())
 }

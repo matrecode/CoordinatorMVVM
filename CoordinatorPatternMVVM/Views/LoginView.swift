@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
     @EnvironmentObject var authCoordinator: AuthCoordinator
+    @StateObject private var loginVM = LoginVM()
 
     var body: some View {
         VStack {
@@ -11,16 +10,22 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .padding(.bottom, 40)
 
-            TextField("Email", text: $email)
+            TextField("Email", text: $loginVM.email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
 
-            SecureField("Password", text: $password)
+            SecureField("Password", text: $loginVM.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.bottom, 20)
+            
+            if let errorMessage = loginVM.errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding(.bottom, 20)
+            }
 
             Button(action: {
-                // Handle login action
+                loginVM.login(authCoordinator: authCoordinator)
             }) {
                 Text("Login")
                     .frame(minWidth: 0, maxWidth: .infinity)
@@ -46,6 +51,8 @@ struct LoginView: View {
             .padding(.top, 20)
         }
         .padding(.horizontal, 40)
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 

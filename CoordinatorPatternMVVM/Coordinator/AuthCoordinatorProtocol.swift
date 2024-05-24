@@ -11,6 +11,6 @@ protocol AuthCoordinatorProtocol {
     func navigateToSignUp()
     func navigateToSignIn()
     func navigateToForGotPassword()
-    func navigateToHomeView()
+    func navigateToMainView()
 }
 

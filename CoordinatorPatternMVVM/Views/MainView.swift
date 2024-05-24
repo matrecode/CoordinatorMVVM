@@ -1,18 +1,51 @@
 //
-//  MainView.swift
+//  MainTabView.swift
 //  CoordinatorPatternMVVM
 //
-//  Created by Hemant Rajkumar Pancheshwar on 17/05/24.
+//  Created by Hemant Rajkumar Pancheshwar on 24/05/24.
 //
 
 import SwiftUI
 
 struct MainView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationBarBackButtonHidden(true)
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().unselectedItemTintColor = UIColor.systemGray
     }
-    
+    var body: some View {
+        
+        ZStack(alignment : .bottom){
+            Color.white // Set background color of TabView to white
+                .edgesIgnoringSafeArea(.all)
+            TabView{
+                TransactionsView()
+                   .tabItem {
+                       Image(systemName: "list.bullet")
+                       Text("Transactions")
+                   }
+
+               AnalyticsView()
+                   .tabItem {
+                       Image(systemName: "chart.bar")
+                       Text("Analytics")
+                   }
+
+               ProfileView()
+                   .tabItem {
+                       Image(systemName: "person.crop.circle")
+                       Text("Profile")
+                   }
+            }
+            
+            VStack(spacing: 0) {
+               Divider() // Separator line
+                    .background(Color.white)
+               Spacer().frame(height: 49) // Height of the tab bar items
+           }
+        }.navigationBarBackButtonHidden()
+      
+    }
 }
 
 #Preview {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		126F35D82C007FFB00D3E714 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F35D72C007FFB00D3E714 /* MainView.swift */; };
+		126F35DA2C00811400D3E714 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F35D92C00811400D3E714 /* AnalyticsView.swift */; };
+		126F35DC2C00814300D3E714 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126F35DB2C00814300D3E714 /* ProfileView.swift */; };
+		12965C402BFFB7A600FF18AF /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12965C3F2BFFB7A600FF18AF /* Transactions.swift */; };
 		1298CADD2BF743A7004FA015 /* CoordinatorPatternMVVMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CADC2BF743A7004FA015 /* CoordinatorPatternMVVMApp.swift */; };
 		1298CADF2BF743A7004FA015 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CADE2BF743A7004FA015 /* ContentView.swift */; };
 		1298CAE12BF743A8004FA015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1298CAE02BF743A8004FA015 /* Assets.xcassets */; };
@@ -16,7 +20,7 @@
 		1298CAF32BF744E0004FA015 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CAF22BF744E0004FA015 /* ForgotPasswordView.swift */; };
 		1298CAF72BF770E9004FA015 /* AuthCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CAF62BF770E9004FA015 /* AuthCoordinatorProtocol.swift */; };
 		1298CAF92BF7713D004FA015 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CAF82BF7713D004FA015 /* AuthCoordinator.swift */; };
-		1298CAFB2BF777A9004FA015 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CAFA2BF777A9004FA015 /* MainView.swift */; };
+		1298CAFB2BF777A9004FA015 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CAFA2BF777A9004FA015 /* TransactionsView.swift */; };
 		1298CAFD2BF7AF80004FA015 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1298CAFC2BF7AF80004FA015 /* GoogleService-Info.plist */; };
 		1298CB002BF7B100004FA015 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1298CAFF2BF7B100004FA015 /* FirebaseAnalytics */; };
 		1298CB022BF7B100004FA015 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1298CB012BF7B100004FA015 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		126F35D72C007FFB00D3E714 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		126F35D92C00811400D3E714 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		126F35DB2C00814300D3E714 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		12965C3F2BFFB7A600FF18AF /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		1298CAD92BF743A7004FA015 /* CoordinatorPatternMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPatternMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1298CADC2BF743A7004FA015 /* CoordinatorPatternMVVMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorPatternMVVMApp.swift; sourceTree = "<group>"; };
 		1298CADE2BF743A7004FA015 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,7 +47,7 @@
 		1298CAF22BF744E0004FA015 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		1298CAF62BF770E9004FA015 /* AuthCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1298CAF82BF7713D004FA015 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
-		1298CAFA2BF777A9004FA015 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1298CAFA2BF777A9004FA015 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1298CAFC2BF7AF80004FA015 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1298CB032BF7B1F9004FA015 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1298CB082BF7B5C1004FA015 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
@@ -109,7 +117,10 @@
 				1298CAEE2BF744B1004FA015 /* LoginView.swift */,
 				1298CAF02BF744CC004FA015 /* SignUpView.swift */,
 				1298CAF22BF744E0004FA015 /* ForgotPasswordView.swift */,
-				1298CAFA2BF777A9004FA015 /* MainView.swift */,
+				1298CAFA2BF777A9004FA015 /* TransactionsView.swift */,
+				126F35D72C007FFB00D3E714 /* MainView.swift */,
+				126F35D92C00811400D3E714 /* AnalyticsView.swift */,
+				126F35DB2C00814300D3E714 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				1298CB032BF7B1F9004FA015 /* User.swift */,
+				12965C3F2BFFB7A600FF18AF /* Transactions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,18 +241,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1298CAF12BF744CC004FA015 /* SignUpView.swift in Sources */,
+				126F35DA2C00811400D3E714 /* AnalyticsView.swift in Sources */,
 				1298CB0B2BF91FD6004FA015 /* LoginVM.swift in Sources */,
-				1298CAFB2BF777A9004FA015 /* MainView.swift in Sources */,
+				12965C402BFFB7A600FF18AF /* Transactions.swift in Sources */,
+				1298CAFB2BF777A9004FA015 /* TransactionsView.swift in Sources */,
 				1298CAEF2BF744B1004FA015 /* LoginView.swift in Sources */,
 				1298CADF2BF743A7004FA015 /* ContentView.swift in Sources */,
 				1298CB0F2BF9203C004FA015 /* ForgotPasswordVM.swift in Sources */,
 				1298CADD2BF743A7004FA015 /* CoordinatorPatternMVVMApp.swift in Sources */,
+				126F35DC2C00814300D3E714 /* ProfileView.swift in Sources */,
 				1298CB092BF7B5C1004FA015 /* AuthServices.swift in Sources */,
 				1298CB042BF7B1F9004FA015 /* User.swift in Sources */,
 				1298CAF92BF7713D004FA015 /* AuthCoordinator.swift in Sources */,
 				1298CAF72BF770E9004FA015 /* AuthCoordinatorProtocol.swift in Sources */,
 				1298CB0D2BF9200D004FA015 /* SignUpVM.swift in Sources */,
 				1298CAF32BF744E0004FA015 /* ForgotPasswordView.swift in Sources */,
+				126F35D82C007FFB00D3E714 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ class AuthCoordinator : ObservableObject, AuthCoordinatorProtocol {
         case login
         case signup
         case forgotPassword
-        case home
+        case main
     }
     
     func navigateToSignIn() {
@@ -30,7 +30,7 @@ class AuthCoordinator : ObservableObject, AuthCoordinatorProtocol {
         path.append(Route.forgotPassword)
     }
     
-    func navigateToHomeView() {
-        path.append(Route.home)
+    func navigateToMainView() {
+        path.append(Route.main)
     }
 }

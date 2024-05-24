@@ -25,7 +25,7 @@ struct ContentView: View {
                     case .forgotPassword:
                         ForgotPasswordView()
                             .environmentObject(authCoordinator)
-                    case .home:
+                    case .main:
                         MainView()
                             .environmentObject(authCoordinator)
                     }

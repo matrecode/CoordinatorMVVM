@@ -17,7 +17,7 @@ class LoginVM: ObservableObject {
             switch result {
             case .success(let user):
                 print("User logged in: \(user)")
-                authCoordinator.navigateToHomeView()
+                authCoordinator.navigateToMainView()
                 
             case .failure(let error):
                 self.errorMessage = error.localizedDescription

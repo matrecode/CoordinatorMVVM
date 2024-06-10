@@ -23,54 +23,94 @@ struct TransactionsView: View {
         Transactions(name: "Freelance Work", amount: "$350", isSubscription: false, type: .income, date: Date()),
         Transactions(name: "AWS Plan", amount: "$145", isSubscription: true, type: .expense, date: Date())
     ]
+    @State private var showAllTransactions = false;
     
     
     var body: some View {
         VStack(alignment: .leading){
+            
+        
+            
             HStack{
                 Text("Recent Transactions")
                     .font(.headline)
                 Spacer()
                 Button(action:{
-                    
+                    withAnimation{showAllTransactions.toggle()}
                 }){
-                    Text("See all")
+                    Text(showAllTransactions ? "See less" : "See more")
                 }
             }.padding()
             
-            List(transactions){ transaction in
-                HStack{
-                    VStack(alignment: .leading) {
-                        Text(transaction.name)
-                            
-                        if(transaction.isSubscription){
-                        Text("Subscription")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        }else{
-                            Text("Income")
+            List{
+                
+                if showAllTransactions {
+                    ForEach(transactions){ transaction in
+                        HStack{
+                            VStack(alignment: .leading) {
+                                Text(transaction.name)
+                                    
+                                if(transaction.isSubscription){
+                                Text("Subscription")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                }else{
+                                    Text("Income")
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                            Spacer()
+                            VStack(alignment:.trailing){
+                                Text("\(transaction.type == .expense ? "-" : "+")\(transaction.amount)")
+                                    .foregroundColor(transaction.type == .expense ? .red : .green)
+                                HStack {
+                                    Text(transaction.date, style: .date)
+                                    Text(transaction.date, style: .time)
+                                }
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
-                        }
+                            }
+                        }.frame(height:50)
                     }
-                    Spacer()
-                    VStack(alignment:.trailing){
-                        Text("\(transaction.type == .expense ? "-" : "+")\(transaction.amount)")
-                            .foregroundColor(transaction.type == .expense ? .red : .green)
-                        HStack {
-                            Text(transaction.date, style: .date)
-                            Text(transaction.date, style: .time)
-                        }
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                }else{
+                    ForEach(transactions.prefix(3)){ transaction in
+                        HStack{
+                            VStack(alignment: .leading) {
+                                Text(transaction.name)
+                                    
+                                if(transaction.isSubscription){
+                                Text("Subscription")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                }else{
+                                    Text("Income")
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                            Spacer()
+                            VStack(alignment:.trailing){
+                                Text("\(transaction.type == .expense ? "-" : "+")\(transaction.amount)")
+                                    .foregroundColor(transaction.type == .expense ? .red : .green)
+                                HStack {
+                                    Text(transaction.date, style: .date)
+                                    Text(transaction.date, style: .time)
+                                }
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                            }
+                        }.frame(height:50)
                     }
-                }.frame(height:50)
+                }
             }
         }
         
     }
     
 }
+
+
 
 #Preview {
     TransactionsView()

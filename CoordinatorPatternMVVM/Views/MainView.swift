@@ -19,10 +19,10 @@ struct MainView: View {
             Color.white // Set background color of TabView to white
                 .edgesIgnoringSafeArea(.all)
             TabView{
-                TransactionsView()
+                HomeView()
                    .tabItem {
                        Image(systemName: "list.bullet")
-                       Text("Transactions")
+                       Text("Home")
                    }
 
                AnalyticsView()

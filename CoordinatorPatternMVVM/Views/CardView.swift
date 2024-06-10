@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
+    @StateObject private var creditCardVM = CreditCardViewModel()
     var body: some View {
         HStack{
             VStack(alignment:.leading){
@@ -36,52 +37,71 @@ struct CardView: View {
             
         }
      
-        ZStack{
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(.linearGradient(colors:[
-                    Color(.blue),
-                    Color(.systemBlue)
-                ], startPoint: .topLeading, endPoint: .bottomTrailing))
-            
-                // Card Details
-            VStack(alignment: .leading, spacing:10){
-                HStack{
-                    Text("1111 2222 3333 4444")
+        VStack {
+            ZStack{
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(.linearGradient(colors:[
+                        Color(.blue),
+                        Color(.systemBlue)
+                    ], startPoint: .topLeading, endPoint: .bottomTrailing))
+                
+                    // Card Details
+                VStack(alignment: .leading, spacing:10){
+                    HStack{
+                        Text(creditCardVM.isCvvVisible ? creditCardVM.cardNumber : "xxxx xxxx xxxx xxx")
+                            .font(.headline)
+                        Spacer()
+                        Image("mastercard")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 50)
+                    }
+                    
+                    HStack(spacing:12){
+                        Text(creditCardVM.isCvvVisible ? creditCardVM.expiryDate : "MM/YY")
+                            .font(.headline)
+                        Spacer()
+                        
+                        Text(creditCardVM.isCvvVisible ?  creditCardVM.cvv! : "***")
+                                .font(.headline)
+                        Button(action: {
+                            creditCardVM.toggleCvvVisibility()
+                        }) {
+                            Image(systemName: creditCardVM.isCvvVisible ? "eye.slash.fill" : "eye.fill")
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .padding(.top, 15)
+                    
+                    Spacer(minLength: 0)
+                    
+                    Text(creditCardVM.isCvvVisible ? creditCardVM.cardHolderName : "XXXXXX XXXXXX XXXXXX")
+                        .padding(.bottom, 20)
                         .font(.headline)
-                    Spacer()
-                    Image("mastercard")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 50)
+                   
                 }
-                
-                HStack(spacing:12){
-                    Text("02/28")
-                        .font(.headline)
-                    Spacer()
-                    Text("CVV")
-                        .font(.headline)
-                    Image(systemName: "questionmark.circle.fill")
-                }
-                .padding(.top, 15)
-                
-                Spacer(minLength: 0)
-                
-                Text("AKSHAY DILANSING MATRE")
-                    .padding(.bottom, 20)
-                    .font(.headline)
-               
+                .padding(20)
+                .environment(\.colorScheme, .dark)
+        
             }
-            .padding(20)
-            .environment(\.colorScheme, .dark)
-            
+            .frame(height: 230)
         }
-        .frame(height: 230)
-    
+        
+        if creditCardVM.isCvvVisible {
+            Text("Car Info visible for \(creditCardVM.remainingTime) seconds")
+                .font(.caption2)
+                .foregroundColor(.red)
+                .padding(.top, 5)
+        }else{
+            Text("Press eye icon to see card info")
+                .font(.caption2)
+                .foregroundColor(.blue)
+                .padding(.top, 5)
+        }
+
     }
 }
 
 #Preview {
     CardView()
-       
 }

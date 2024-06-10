@@ -71,7 +71,7 @@ struct TransactionsView: View {
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                             }
-                        }.frame(height:50)
+                        }.frame(height:40)
                     }
                 }else{
                     ForEach(transactions.prefix(3)){ transaction in
@@ -100,7 +100,7 @@ struct TransactionsView: View {
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                             }
-                        }.frame(height:50)
+                        }.frame(height:40)
                     }
                 }
             }

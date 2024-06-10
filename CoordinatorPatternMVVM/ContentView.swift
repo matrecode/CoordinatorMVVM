@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $authCoordinator.path){
-            LoginView()
+            MainView()
                 .navigationDestination(for: AuthCoordinator.Route.self){route in
                     switch route {
                     case .login:

@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Transactions: Identifiable{
+struct Transactions: Identifiable, Hashable{
     
     enum TransactionType{
         case income

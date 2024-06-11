@@ -82,6 +82,7 @@ struct CardView: View {
                 }
                 .padding(20)
                 .environment(\.colorScheme, .dark)
+                
         
             }
             .frame(height: 230)

@@ -178,6 +178,8 @@
 		1298CAEA2BF74451004FA015 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D078D4D2C183586001910A8 /* ProfileComp */,
+				9D078D4C2C183573001910A8 /* AnalyticsComp */,
 				1298CAEE2BF744B1004FA015 /* LoginView.swift */,
 				1298CAF02BF744CC004FA015 /* SignUpView.swift */,
 				1298CAF22BF744E0004FA015 /* ForgotPasswordView.swift */,
@@ -227,6 +229,20 @@
 				1298CB082BF7B5C1004FA015 /* AuthServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9D078D4C2C183573001910A8 /* AnalyticsComp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AnalyticsComp;
+			sourceTree = "<group>";
+		};
+		9D078D4D2C183586001910A8 /* ProfileComp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileComp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

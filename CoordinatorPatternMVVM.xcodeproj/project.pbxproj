@@ -29,6 +29,7 @@
 		1298CB0B2BF91FD6004FA015 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CB0A2BF91FD6004FA015 /* LoginVM.swift */; };
 		1298CB0D2BF9200D004FA015 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CB0C2BF9200D004FA015 /* SignUpVM.swift */; };
 		1298CB0F2BF9203C004FA015 /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298CB0E2BF9203C004FA015 /* ForgotPasswordVM.swift */; };
+		9D9453882C1B38A5004626B4 /* CollapsibleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9453872C1B38A5004626B4 /* CollapsibleText.swift */; };
 		9DA3D1132C0C2DCD00426B56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3D1122C0C2DCD00426B56 /* GoogleService-Info.plist */; };
 		9DF67BF92C0C312E003E0A5C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9DF67BF82C0C312E003E0A5C /* FirebaseAnalytics */; };
 		9DF67BFB2C0C312E003E0A5C /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9DF67BFA2C0C312E003E0A5C /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -85,6 +86,7 @@
 		1298CB0A2BF91FD6004FA015 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		1298CB0C2BF9200D004FA015 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
 		1298CB0E2BF9203C004FA015 /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
+		9D9453872C1B38A5004626B4 /* CollapsibleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleText.swift; sourceTree = "<group>"; };
 		9DA3D1122C0C2DCD00426B56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DF67C302C0C4BCC003E0A5C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9DF67C322C0C51D5003E0A5C /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -178,17 +180,10 @@
 		1298CAEA2BF74451004FA015 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D9453862C1B386E004626B4 /* Components */,
+				9D9453852C1B385C004626B4 /* MainView */,
 				9D078D4D2C183586001910A8 /* ProfileComp */,
 				9D078D4C2C183573001910A8 /* AnalyticsComp */,
-				1298CAEE2BF744B1004FA015 /* LoginView.swift */,
-				1298CAF02BF744CC004FA015 /* SignUpView.swift */,
-				1298CAF22BF744E0004FA015 /* ForgotPasswordView.swift */,
-				1298CAFA2BF777A9004FA015 /* TransactionsView.swift */,
-				126F35D72C007FFB00D3E714 /* MainView.swift */,
-				126F35D92C00811400D3E714 /* AnalyticsView.swift */,
-				126F35DB2C00814300D3E714 /* ProfileView.swift */,
-				9DF67C302C0C4BCC003E0A5C /* CardView.swift */,
-				9DF67C362C0C5D80003E0A5C /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +229,7 @@
 		9D078D4C2C183573001910A8 /* AnalyticsComp */ = {
 			isa = PBXGroup;
 			children = (
+				126F35D92C00811400D3E714 /* AnalyticsView.swift */,
 			);
 			path = AnalyticsComp;
 			sourceTree = "<group>";
@@ -241,8 +237,31 @@
 		9D078D4D2C183586001910A8 /* ProfileComp */ = {
 			isa = PBXGroup;
 			children = (
+				126F35DB2C00814300D3E714 /* ProfileView.swift */,
 			);
 			path = ProfileComp;
+			sourceTree = "<group>";
+		};
+		9D9453852C1B385C004626B4 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				126F35D72C007FFB00D3E714 /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		9D9453862C1B386E004626B4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1298CAEE2BF744B1004FA015 /* LoginView.swift */,
+				1298CAF02BF744CC004FA015 /* SignUpView.swift */,
+				1298CAF22BF744E0004FA015 /* ForgotPasswordView.swift */,
+				9DF67C302C0C4BCC003E0A5C /* CardView.swift */,
+				9DF67C362C0C5D80003E0A5C /* HomeView.swift */,
+				1298CAFA2BF777A9004FA015 /* TransactionsView.swift */,
+				9D9453872C1B38A5004626B4 /* CollapsibleText.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +392,7 @@
 				1298CB0D2BF9200D004FA015 /* SignUpVM.swift in Sources */,
 				1298CAF32BF744E0004FA015 /* ForgotPasswordView.swift in Sources */,
 				126F35D82C007FFB00D3E714 /* MainView.swift in Sources */,
+				9D9453882C1B38A5004626B4 /* CollapsibleText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
